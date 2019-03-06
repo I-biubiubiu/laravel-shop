@@ -1,8 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-static-top">
   <div class="container">
-    .
-    .
-    .
+    Larvel Shop
       <ul class="navbar-nav navbar-right">
         <!-- 登录注册链接开始 -->
         @guest
@@ -26,6 +24,5 @@
         @endguest
         <!-- 登录注册链接结束 -->
       </ul>
-    </div>
   </div>
 </nav>
