@@ -70,7 +70,7 @@ class ProductsController extends Controller
             });
         });
 
-        return $grid;
+        return $grid; 
     }
 
     protected function detail($id)
