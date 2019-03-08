@@ -34,5 +34,9 @@ Route::group(['middleware' => ['auth', 'verified']], function() {
     Route::get('products/favorites', 'ProductsController@favorites')->name('products.favorites');
     // 加入购物车
     Route::post('cart', 'CartController@add')->name('cart.add');
+    // 购物车列表
+    Route::get('cart', 'CartController@index')->name('cart.index');
+    // 购物车删除
+    Route::delete('cart/{sku}', 'CartController@remove')->name('cart.remove');
 });
 
