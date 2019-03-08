@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-static-top">
   <div class="container">
-    Larvel Shop
+  <a href="{{ route('root') }}"> Larvel Shop </a>
       <ul class="navbar-nav navbar-right">
         <!-- 登录注册链接开始 -->
         @guest
@@ -13,6 +13,7 @@
             {{ Auth::user()->name }}
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a href="{{ route('products.favorites') }}" class="dropdown-item">我的收藏</a>
             <a href="{{ route('user_addresses.index') }}" class="dropdown-item">收货地址</a>
             <a class="dropdown-item" id="logout" href="#"
                onclick="event.preventDefault();document.getElementById('logout-form').submit();">退出登录</a>
