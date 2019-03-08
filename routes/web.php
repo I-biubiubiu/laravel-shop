@@ -13,6 +13,8 @@
 
 Route::redirect('/', '/products')->name('root');
 Route::get('products', 'ProductsController@index')->name('products.index');
+// 商品详情 product仅支持数整，当id规则变更后，只需更改正则条件
+Route::get('products/{product}', 'ProductsController@show')->name('products.show')->where(['product' => '[0-9]+']);
 
 Auth::routes(['verify' => true]);
 
@@ -30,9 +32,7 @@ Route::group(['middleware' => ['auth', 'verified']], function() {
     Route::delete('products/{product}/favorite', 'ProductsController@disfavor')->name('products.disfavor');
     // 收藏商品列表
     Route::get('products/favorites', 'ProductsController@favorites')->name('products.favorites');
+    // 加入购物车
+    Route::post('cart', 'CartController@add')->name('cart.add');
 });
-
-// 商品详情
-Route::get('products/{product}', 'ProductsController@show')->name('products.show');
-
 
