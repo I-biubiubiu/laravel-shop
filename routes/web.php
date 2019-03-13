@@ -50,6 +50,10 @@ Route::group(['middleware' => ['auth', 'verified']], function() {
     Route::get('payment/alipay/return', 'PaymentController@alipayReturn')->name('payment.alipay.return');
     // 确认收货
     Route::post('orders/{order}/received', 'OrdersController@received')->name('orders.received');
+    // 评价页
+    Route::get('orders/{order}/review', 'OrdersController@review')->name('orders.review.show');
+    // 执行评价
+    Route::post('orders/{order}/review', 'OrdersController@sendReview')->name('orders.review.store');
 });
 
 // 支付宝服务器回调
